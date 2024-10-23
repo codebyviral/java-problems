@@ -1,36 +1,54 @@
-// Write a Java program to create an interface Playable with a method play() that takes no arguments and returns void. 
-// Create three classes Football, Volleyball, and Basketball that implement the Playable interface 
-// and override the play() method to play the respective sports.
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Viral Vaghela 23BIT224");
+
+        Football soccer = new Football();
+        // Volleyball volley = new Volleyball();
+        // Basketball basket = new Basketball();
+        Beachball beach = new Beachball();
+        
+        System.out.println(soccer.VAR);
+        soccer.Play();
+        soccer.Kick();
+        // volley.Play();
+        // basket.Play();
+        beach.Play();
+        beach.Kick();
+    }
+}
 
 interface Playable {
-    void play();
+    int VAR = 404;
+    
+    void Play();
+    void Kick();
 }
 
 class Football implements Playable {
-    public void play() {
-        System.out.println("Playing Football");
+    public void Play() {
+        System.out.println("lets play football");
     }
-}
-        
-class Volleyball implements Playable {
-    public void play() {
-        System.out.println("Playing Volleyball");
-    }
-}
-
-class Basketball implements Playable {
-    public void play() {
-        System.out.println("Playing Basketball");
+    
+    public void Kick() {
+        System.out.println("Taking a Football Kick...");
     }
 }
 
-class Main {
-    public static void main(String[] args) {
-        Football football = new Football();
-        Volleyball volleyball = new Volleyball();
-        Basketball basketball = new Basketball();
-        football.play();
-        volleyball.play();
-        basketball.play();
+abstract class Volleyball implements Playable {
+    public void Play() {
+        System.out.println("lets play Volleyball");
+    }
+}
+
+abstract class Basketball implements Playable {
+    public void Play() {
+        System.out.println("lets play Basketball");
+    }
+}
+
+class Beachball extends Volleyball {
+    public void Kick() {
+        System.out.println("Taking a Beachball Kick...");
     }
 }
